@@ -1,0 +1,2776 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#ff6f9f">
+
+<title>Happy Birthday Indah 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:#fff0f6;
+    color:#704456;
+}
+
+button{
+    border:0;
+    font-family:inherit;
+    cursor:pointer;
+}
+
+/* =========================================================
+   APP
+========================================================= */
+
+#app{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+}
+
+/* =========================================================
+   PAGE / TRANSISI DREAMY
+========================================================= */
+
+.page{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100dvh;
+    min-height:100dvh;
+
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    padding:
+        max(16px,env(safe-area-inset-top))
+        18px
+        max(16px,env(safe-area-inset-bottom));
+
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+
+    transform:
+        scale(1.06)
+        translateY(14px);
+
+    filter:blur(10px);
+
+    transition:
+        opacity 1.25s cubic-bezier(.22,1,.36,1),
+        transform 1.4s cubic-bezier(.22,1,.36,1),
+        filter 1.2s cubic-bezier(.22,1,.36,1);
+}
+
+.page.active{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+
+    transform:
+        scale(1)
+        translateY(0);
+
+    filter:blur(0);
+}
+
+.page.exit{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+
+    transform:
+        scale(.94)
+        translateY(-10px);
+
+    filter:blur(10px);
+}
+
+/* cahaya transisi */
+
+.page::after{
+    content:"";
+
+    position:absolute;
+    inset:-40%;
+
+    z-index:100;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.98) 0%,
+            rgba(255,205,225,.82) 18%,
+            rgba(255,115,165,.28) 43%,
+            transparent 70%
+        );
+
+    transform:scale(.25);
+
+    mix-blend-mode:screen;
+}
+
+.page.transitionLight::after{
+    animation:
+        dreamyLight
+        1.35s
+        cubic-bezier(.22,1,.36,1);
+}
+
+@keyframes dreamyLight{
+
+    0%{
+        opacity:0;
+        transform:scale(.25);
+    }
+
+    25%{
+        opacity:1;
+        transform:scale(.65);
+    }
+
+    55%{
+        opacity:.75;
+        transform:scale(1.45);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(2.8);
+    }
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.page1{
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            #ffffff 0,
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            #fff4f8,
+            #ffd5e6
+        );
+}
+
+.page2{
+    background:
+        radial-gradient(
+            circle at 50% 8%,
+            #ffffff 0,
+            transparent 35%
+        ),
+        linear-gradient(
+            145deg,
+            #fff5f9,
+            #ffd9e9
+        );
+
+    justify-content:flex-start;
+}
+
+.page3{
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            #ffffff 0,
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            #fff4f9,
+            #ffd9e8
+        );
+}
+
+.page4{
+    background:
+        radial-gradient(
+            circle at 50% 12%,
+            #ffffff 0,
+            transparent 38%
+        ),
+        linear-gradient(
+            145deg,
+            #fff5f9,
+            #ffe0ec
+        );
+}
+
+/* =========================================================
+   DECOR
+========================================================= */
+
+.decor{
+    position:absolute;
+    z-index:1;
+
+    pointer-events:none;
+    user-select:none;
+
+    animation:
+        floating 4s ease-in-out infinite;
+}
+
+.d1{
+    top:12%;
+    left:7%;
+    font-size:28px;
+}
+
+.d2{
+    top:18%;
+    right:8%;
+    font-size:26px;
+    animation-delay:1s;
+}
+
+.d3{
+    bottom:14%;
+    left:8%;
+    font-size:27px;
+    animation-delay:1.5s;
+}
+
+.d4{
+    bottom:11%;
+    right:8%;
+    font-size:29px;
+    animation-delay:2s;
+}
+
+@keyframes floating{
+
+    0%,100%{
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50%{
+        transform:
+            translateY(-13px)
+            rotate(6deg);
+    }
+}
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.eyebrow{
+    position:relative;
+    z-index:5;
+
+    padding:6px 14px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.82);
+
+    color:#b75b79;
+
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:2.5px;
+
+    box-shadow:
+        0 8px 25px rgba(120,40,80,.08);
+}
+
+.heroSmall{
+    position:relative;
+    z-index:5;
+
+    margin-top:7px;
+
+    font-family:"Playfair Display",serif;
+
+    color:#95536c;
+    font-size:17px;
+}
+
+.heroText{
+    position:relative;
+    z-index:5;
+
+    width:min(90vw,400px);
+
+    margin:15px 0;
+
+    text-align:center;
+
+    color:#795365;
+
+    font-size:13px;
+    line-height:1.6;
+}
+
+/* =========================================================
+   PANDA MERAH
+========================================================= */
+
+.panda{
+    position:relative;
+
+    width:105px;
+    height:105px;
+
+    z-index:5;
+
+    animation:
+        pandaFloat
+        3s
+        ease-in-out
+        infinite;
+}
+
+@keyframes pandaFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-7px);
+    }
+}
+
+.panda .ear{
+    position:absolute;
+
+    top:7px;
+
+    width:33px;
+    height:33px;
+
+    border-radius:50%;
+
+    background:#99413d;
+}
+
+.panda .ear.left{
+    left:10px;
+}
+
+.panda .ear.right{
+    right:10px;
+}
+
+.panda .head{
+    position:absolute;
+
+    left:13px;
+    top:17px;
+
+    width:79px;
+    height:70px;
+
+    border-radius:48%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #dd735e,
+            #a84640
+        );
+
+    z-index:2;
+}
+
+.panda .body{
+    position:absolute;
+
+    left:25px;
+    top:73px;
+
+    width:57px;
+    height:37px;
+
+    background:#a64a42;
+
+    border-radius:
+        45% 45% 30% 30%;
+}
+
+.panda .mask{
+    position:absolute;
+
+    top:27px;
+
+    width:29px;
+    height:21px;
+
+    background:#fff0df;
+
+    border-radius:50%;
+}
+
+.panda .mask.left{
+    left:6px;
+    transform:rotate(10deg);
+}
+
+.panda .mask.right{
+    right:6px;
+    transform:rotate(-10deg);
+}
+
+.panda .eye{
+    position:absolute;
+
+    top:34px;
+
+    width:6px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#281c1c;
+
+    z-index:5;
+}
+
+.panda .eye.left{
+    left:22px;
+}
+
+.panda .eye.right{
+    right:22px;
+}
+
+.panda .nose{
+    position:absolute;
+
+    left:50%;
+    top:45px;
+
+    width:9px;
+    height:7px;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:#291c1c;
+
+    z-index:5;
+}
+
+.panda .mouth{
+    position:absolute;
+
+    left:50%;
+    top:51px;
+
+    width:14px;
+    height:7px;
+
+    transform:translateX(-50%);
+
+    border-bottom:2px solid #362020;
+
+    border-radius:50%;
+
+    z-index:5;
+}
+
+.panda .cheek{
+    position:absolute;
+
+    top:47px;
+
+    width:13px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:#ef8995;
+
+    opacity:.7;
+}
+
+.panda .cheek.left{
+    left:7px;
+}
+
+.panda .cheek.right{
+    right:7px;
+}
+
+/* =========================================================
+   NAMA INDAH
+========================================================= */
+
+.heroName{
+    position:relative;
+    z-index:5;
+
+    margin-top:3px;
+
+    font-family:"Caveat",cursive;
+
+    font-weight:700;
+
+    font-size:clamp(80px,23vw,125px);
+
+    line-height:.75;
+
+    color:#ed4d87;
+
+    transform:rotate(-3deg);
+
+    text-shadow:
+        2px 3px #ffffff,
+        0 10px 30px rgba(220,55,115,.18);
+
+    animation:
+        nameAppear
+        1.2s
+        cubic-bezier(.16,1,.3,1)
+        both;
+}
+
+@keyframes nameAppear{
+
+    0%{
+        opacity:0;
+
+        transform:
+            scale(.55)
+            rotate(-12deg);
+
+        filter:blur(10px);
+    }
+
+    70%{
+        opacity:1;
+
+        transform:
+            scale(1.05)
+            rotate(-2deg);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            scale(1)
+            rotate(-3deg);
+
+        filter:blur(0);
+    }
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.mainButton{
+    position:relative;
+    z-index:20;
+
+    padding:13px 25px;
+
+    border-radius:50px;
+
+    color:#ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff70a3,
+            #e9467d
+        );
+
+    font-size:14px;
+    font-weight:700;
+
+    box-shadow:
+        0 13px 30px rgba(215,55,110,.25);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.mainButton:active{
+    transform:scale(.93);
+
+    box-shadow:
+        0 7px 18px rgba(215,55,110,.3);
+}
+
+/* =========================================================
+   FOTO
+========================================================= */
+
+.photo{
+    position:relative;
+    z-index:5;
+
+    width:min(62vw,240px);
+
+    padding:
+        7px
+        7px
+        10px;
+
+    background:#ffffff;
+
+    border-radius:19px;
+
+    box-shadow:
+        0 18px 45px rgba(120,45,75,.20);
+}
+
+.photo::before{
+    content:"";
+
+    position:absolute;
+
+    top:-7px;
+    left:50%;
+
+    width:58px;
+    height:18px;
+
+    transform:
+        translateX(-50%)
+        rotate(-3deg);
+
+    background:#ffc0d5;
+}
+
+.photo img{
+    display:block;
+
+    width:100%;
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:13px;
+}
+
+.caption{
+    padding-top:5px;
+
+    text-align:center;
+
+    font-family:"Caveat",cursive;
+
+    color:#c25478;
+
+    font-size:18px;
+}
+
+/* =========================================================
+   PAGE 2 — KUE
+========================================================= */
+
+.page2{
+    padding-top:
+        max(12px,env(safe-area-inset-top));
+}
+
+.page2 .date{
+    position:relative;
+    z-index:5;
+
+    margin-bottom:2px;
+
+    font-size:8px;
+
+    letter-spacing:2px;
+
+    color:#b7607e;
+}
+
+.page2 h1{
+    position:relative;
+    z-index:5;
+
+    margin-bottom:5px;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:
+        clamp(
+            21px,
+            6vw,
+            29px
+        );
+
+    text-align:center;
+
+    color:#e74e83;
+}
+
+.page2 .photo{
+    width:min(45vw,180px);
+
+    transform:rotate(-2deg);
+}
+
+.page2 .photo img{
+    height:105px;
+}
+
+.page2 .caption{
+    font-size:15px;
+}
+
+.page2 .message{
+    position:relative;
+    z-index:5;
+
+    width:min(90vw,390px);
+
+    margin:5px auto 0;
+
+    text-align:center;
+
+    font-size:10px;
+    line-height:1.35;
+
+    color:#795365;
+}
+
+/* =========================================================
+   CAKE
+========================================================= */
+
+.cakeArea{
+    position:relative;
+    z-index:5;
+
+    width:270px;
+    height:150px;
+
+    flex:none;
+
+    margin-top:0;
+    margin-bottom:-4px;
+}
+
+.cake{
+    position:absolute;
+
+    left:10px;
+    bottom:5px;
+
+    width:250px;
+    height:140px;
+}
+
+.glow{
+    position:absolute;
+
+    left:20px;
+    bottom:0;
+
+    width:210px;
+    height:40px;
+
+    border-radius:50%;
+
+    background:#ff5c96;
+
+    opacity:.12;
+
+    filter:blur(16px);
+}
+
+/* cake layers */
+
+.layer1,
+.layer2,
+.layer3{
+    position:absolute;
+
+    border-radius:16px;
+}
+
+.layer1{
+    left:10px;
+    bottom:0;
+
+    width:230px;
+    height:58px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff79a4,
+            #ffb5ca,
+            #ff719e
+        );
+
+    box-shadow:
+        inset 0 9px #ffe5ee,
+        0 10px 20px rgba(140,50,80,.15);
+}
+
+.layer2{
+    left:29px;
+    bottom:47px;
+
+    width:192px;
+    height:52px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff9fbc,
+            #ffe0e9,
+            #ff9bbb
+        );
+
+    box-shadow:
+        inset 0 8px #fff4f8;
+}
+
+.layer3{
+    left:47px;
+    bottom:90px;
+
+    width:156px;
+    height:44px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffacc6,
+            #ffe7ee,
+            #ffa5c1
+        );
+
+    box-shadow:
+        inset 0 8px #fff7fa;
+}
+
+/* frosting */
+
+.drip{
+    position:absolute;
+
+    background:#fff7fa;
+
+    border-radius:
+        0 0 12px 12px;
+
+    z-index:4;
+}
+
+.drip.a{
+    width:19px;
+    height:20px;
+
+    left:62px;
+    bottom:77px;
+}
+
+.drip.b{
+    width:15px;
+    height:14px;
+
+    left:100px;
+    bottom:83px;
+}
+
+.drip.c{
+    width:21px;
+    height:24px;
+
+    left:133px;
+    bottom:73px;
+}
+
+/* =========================================================
+   STRAWBERRY
+========================================================= */
+
+.berry{
+    position:absolute;
+
+    width:22px;
+    height:25px;
+
+    border-radius:
+        55%
+        55%
+        65%
+        65%;
+
+    background:
+        radial-gradient(
+            circle at 35% 35%,
+            #ffbdc8 0 1px,
+            transparent 2px
+        ),
+        #dd435d;
+
+    z-index:8;
+}
+
+.berry::before{
+    content:"";
+
+    position:absolute;
+
+    left:5px;
+    top:-5px;
+
+    width:13px;
+    height:9px;
+
+    background:#62a84e;
+
+    border-radius:
+        80%
+        0
+        80%
+        0;
+
+    transform:rotate(-20deg);
+}
+
+.berry.one{
+    left:65px;
+    bottom:119px;
+
+    transform:rotate(-12deg);
+}
+
+.berry.two{
+    right:64px;
+    bottom:112px;
+
+    transform:
+        rotate(20deg)
+        scale(.8);
+}
+
+/* =========================================================
+   CANDLES
+========================================================= */
+
+.candles{
+    position:absolute;
+
+    left:101px;
+    bottom:125px;
+
+    display:flex;
+
+    gap:23px;
+
+    z-index:20;
+}
+
+.candle{
+    position:relative;
+
+    width:11px;
+    height:38px;
+
+    border-radius:4px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #ffffff 0 5px,
+            #ff6596 5px 10px
+        );
+}
+
+.flame{
+    position:absolute;
+
+    left:-4px;
+    top:-25px;
+
+    width:19px;
+    height:27px;
+
+    border-radius:
+        60%
+        40%
+        60%
+        40%;
+
+    transform:rotate(45deg);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #ffe06b 45%,
+            #ff8a35
+        );
+
+    box-shadow:
+        0 0 8px #ffd75b,
+        0 0 23px #ffb52f;
+
+    animation:
+        flicker
+        .4s
+        infinite
+        alternate;
+}
+
+@keyframes flicker{
+
+    from{
+        transform:
+            rotate(40deg)
+            scale(.92);
+    }
+
+    to{
+        transform:
+            rotate(49deg)
+            scale(1.08);
+    }
+}
+
+.flame.off{
+    animation:
+        blown
+        .6s
+        forwards;
+}
+
+@keyframes blown{
+
+    0%{
+        opacity:1;
+
+        transform:
+            rotate(45deg)
+            scale(1);
+    }
+
+    45%{
+        opacity:.8;
+
+        transform:
+            translate(-7px,-8px)
+            rotate(20deg)
+            scale(.8);
+    }
+
+    100%{
+        opacity:0;
+
+        transform:
+            translate(-18px,-24px)
+            rotate(0)
+            scale(.1);
+    }
+}
+
+/* =========================================================
+   SMOKE
+========================================================= */
+
+.smoke{
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border:
+        2px solid
+        rgba(120,100,100,.35);
+
+    border-bottom:0;
+    border-left:0;
+
+    border-radius:50%;
+
+    opacity:0;
+
+    animation:
+        smoke
+        1.4s
+        ease-out
+        forwards;
+}
+
+@keyframes smoke{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translate(0,0)
+            scale(.5);
+    }
+
+    20%{
+        opacity:.7;
+    }
+
+    100%{
+        opacity:0;
+
+        transform:
+            translate(8px,-35px)
+            scale(2);
+    }
+}
+
+/* =========================================================
+   BLOW BUTTON
+========================================================= */
+
+.blowButton{
+    position:relative;
+    z-index:30;
+
+    flex:none;
+
+    padding:12px 28px;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff6da0,
+            #e9477e
+        );
+
+    color:#ffffff;
+
+    font-size:13px;
+    font-weight:700;
+
+    box-shadow:
+        0 12px 30px rgba(215,55,110,.30);
+
+    animation:
+        buttonPulse
+        2s
+        infinite;
+}
+
+.blowButton:active{
+    transform:scale(.94);
+}
+
+@keyframes buttonPulse{
+
+    0%,100%{
+        box-shadow:
+            0 12px 30px
+            rgba(215,55,110,.25);
+    }
+
+    50%{
+        box-shadow:
+            0 12px 38px
+            rgba(215,55,110,.50);
+    }
+}
+
+.hint{
+    position:relative;
+    z-index:5;
+
+    margin-top:4px;
+
+    font-size:8px;
+
+    color:#ae7184;
+}
+
+/* =========================================================
+   PAGE 3 — FOTO KEDUA
+========================================================= */
+
+.page3{
+    gap:8px;
+}
+
+.surprise{
+    position:relative;
+    z-index:5;
+
+    font-family:"Caveat",cursive;
+
+    font-size:
+        clamp(
+            45px,
+            13vw,
+            70px
+        );
+
+    line-height:.8;
+
+    text-align:center;
+
+    color:#e94c83;
+}
+
+/*
+    Foto kedua sengaja disembunyikan
+    terlebih dahulu agar muncul
+    dengan efek magic.
+*/
+
+.page3 .photo{
+    width:min(65vw,250px);
+
+    opacity:0;
+
+    transform:
+        translateY(45px)
+        scale(.65)
+        rotate(-10deg);
+
+    filter:
+        blur(12px)
+        brightness(1.7);
+}
+
+.page3.active .photo{
+    animation:
+        magicalPhoto
+        1.8s
+        .35s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+@keyframes magicalPhoto{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateY(45px)
+            scale(.65)
+            rotate(-10deg);
+
+        filter:
+            blur(12px)
+            brightness(1.7);
+    }
+
+    35%{
+        opacity:1;
+
+        transform:
+            translateY(-10px)
+            scale(1.08)
+            rotate(4deg);
+
+        filter:
+            blur(3px)
+            brightness(1.3);
+    }
+
+    60%{
+        transform:
+            translateY(3px)
+            scale(.98)
+            rotate(1deg);
+
+        filter:
+            blur(0)
+            brightness(1.05);
+    }
+
+    80%{
+        transform:
+            translateY(-2px)
+            scale(1.02)
+            rotate(2deg);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1)
+            rotate(2deg);
+
+        filter:
+            blur(0)
+            brightness(1);
+    }
+}
+
+/* pesan muncul setelah foto */
+
+.message2{
+    position:relative;
+    z-index:5;
+
+    width:min(90vw,420px);
+
+    text-align:center;
+
+    font-size:11px;
+    line-height:1.5;
+
+    color:#795365;
+
+    opacity:0;
+
+    transform:
+        translateY(25px);
+
+    filter:blur(6px);
+}
+
+.page3.active .message2{
+    animation:
+        messageReveal
+        1.2s
+        1.15s
+        cubic-bezier(.16,1,.3,1)
+        forwards;
+}
+
+@keyframes messageReveal{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translateY(25px);
+
+        filter:blur(6px);
+    }
+
+    100%{
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+        filter:blur(0);
+    }
+}
+
+/* =========================================================
+   PAGE 4
+========================================================= */
+
+.page4{
+    gap:5px;
+}
+
+.finalName{
+    position:relative;
+    z-index:5;
+
+    font-family:"Caveat",cursive;
+
+    font-size:
+        clamp(
+            75px,
+            22vw,
+            120px
+        );
+
+    line-height:.75;
+
+    color:#e94d85;
+
+    transform:rotate(-3deg);
+
+    text-shadow:
+        2px 3px #ffffff,
+        0 10px 30px rgba(220,55,115,.2);
+
+    animation:
+        finalName
+        1.3s
+        cubic-bezier(.16,1,.3,1)
+        both;
+}
+
+@keyframes finalName{
+
+    from{
+        opacity:0;
+
+        transform:
+            scale(.65)
+            rotate(-12deg);
+
+        filter:blur(9px);
+    }
+
+    to{
+        opacity:1;
+
+        transform:
+            scale(1)
+            rotate(-3deg);
+
+        filter:blur(0);
+    }
+}
+
+.finalDecor{
+    position:relative;
+    z-index:5;
+
+    margin:8px 0;
+
+    font-size:20px;
+
+    letter-spacing:4px;
+}
+
+.finalText{
+    position:relative;
+    z-index:5;
+
+    width:min(90vw,430px);
+
+    text-align:center;
+
+    font-size:12px;
+    line-height:1.65;
+
+    color:#795365;
+}
+
+.finalText b{
+    color:#df477d;
+
+    font-size:14px;
+}
+
+.replay{
+    position:relative;
+    z-index:5;
+
+    margin-top:10px;
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    background:#ff6599;
+
+    color:#ffffff;
+
+    font-size:12px;
+    font-weight:700;
+}
+
+/* =========================================================
+   MUSIC BUTTON
+========================================================= */
+
+.musicButton{
+    position:fixed;
+
+    z-index:1000;
+
+    right:14px;
+    top:max(12px,env(safe-area-inset-top));
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.85);
+
+    box-shadow:
+        0 8px 25px
+        rgba(100,40,70,.15);
+
+    font-size:17px;
+}
+
+.musicButton.playing{
+    animation:
+        musicPulse
+        1s
+        infinite;
+}
+
+@keyframes musicPulse{
+
+    50%{
+        transform:scale(1.1);
+    }
+}
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+.confetti{
+    position:fixed;
+
+    z-index:9999;
+
+    width:7px;
+    height:12px;
+
+    pointer-events:none;
+
+    animation:
+        confettiFall
+        3s
+        linear
+        forwards;
+}
+
+@keyframes confettiFall{
+
+    to{
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity:0;
+    }
+}
+
+/* =========================================================
+   FIREWORK PARTICLE
+========================================================= */
+
+.firework{
+    position:fixed;
+
+    z-index:9998;
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+}
+
+/* =========================================================
+   FLASH KHUSUS SETELAH TIUP LILIN
+========================================================= */
+
+.birthdayFlash{
+    position:fixed;
+
+    inset:0;
+
+    z-index:99999;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,1) 0%,
+            rgba(255,190,220,.95) 25%,
+            rgba(255,100,160,.45) 52%,
+            transparent 78%
+        );
+
+    transform:scale(.25);
+
+    transition:
+        opacity .55s ease,
+        transform 1s
+        cubic-bezier(.16,1,.3,1);
+}
+
+/* =========================================================
+   MOBILE HEIGHT
+========================================================= */
+
+@media(max-height:700px){
+
+    .page1 .panda{
+        transform:scale(.78);
+
+        margin-bottom:-13px;
+    }
+
+    .heroName{
+        font-size:75px;
+    }
+
+    .heroText{
+        margin:8px 0;
+
+        font-size:11px;
+    }
+
+    .page2 h1{
+        font-size:20px;
+    }
+
+    .page2 .photo{
+        width:145px;
+    }
+
+    .page2 .photo img{
+        height:82px;
+    }
+
+    .page2 .message{
+        font-size:9px;
+    }
+
+    .cakeArea{
+        transform:scale(.68);
+
+        margin-top:-18px;
+        margin-bottom:-28px;
+    }
+
+    .blowButton{
+        padding:10px 24px;
+
+        font-size:12px;
+    }
+
+    .hint{
+        font-size:7px;
+    }
+
+    .page3 .photo{
+        width:min(62vw,220px);
+    }
+
+    .page3 .photo img{
+        height:160px;
+    }
+
+    .message2{
+        font-size:10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="app">
+
+<!-- ======================================================
+     MUSIC
+====================================================== -->
+
+<button
+    id="musicButton"
+    class="musicButton"
+    aria-label="Musik">
+
+    🎵
+
+</button>
+
+<audio
+    id="music"
+    src="musik.mp3"
+    loop
+    preload="auto">
+</audio>
+
+
+<!-- ======================================================
+     PAGE 1 — OPENING
+====================================================== -->
+
+<section
+    id="page1"
+    class="page page1 active">
+
+    <div class="decor d1">🍓</div>
+    <div class="decor d2">💗</div>
+    <div class="decor d3">✨</div>
+    <div class="decor d4">🌸</div>
+
+    <div class="panda">
+
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+
+        <div class="head">
+
+            <div class="mask left"></div>
+            <div class="mask right"></div>
+
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+
+            <div class="nose"></div>
+            <div class="mouth"></div>
+
+            <div class="cheek left"></div>
+            <div class="cheek right"></div>
+
+        </div>
+
+        <div class="body"></div>
+
+    </div>
+
+    <div class="eyebrow">
+        04 • SEPTEMBER
+    </div>
+
+    <div class="heroSmall">
+        Happy Birthday
+    </div>
+
+    <div class="heroName">
+        Indah
+    </div>
+
+    <p class="heroText">
+        ciee udah tambah umur,abang yang pertama kali ngucapin kan😂
+    </p>
+
+    <button
+        id="openButton"
+        class="mainButton">
+
+        🎁 Kik ini INDAH
+
+    </button>
+
+</section>
+
+
+<!-- ======================================================
+     PAGE 2 — KUE
+====================================================== -->
+
+<section
+    id="page2"
+    class="page page2">
+
+    <div class="decor d1">🍓</div>
+    <div class="decor d2">💗</div>
+    <div class="decor d3">✨</div>
+    <div class="decor d4">🍓</div>
+
+    <div class="date">
+        SPECIAL DAY • 04 SEPTEMBER
+    </div>
+
+    <h1>
+        Selamat Ulang Tahun, Indah! 🎂
+    </h1>
+
+    <div class="photo">
+
+        <img
+            src="foto1.jpg"
+            alt="Foto Indah">
+
+        <div class="caption">
+            Hari spesialmu 💗
+        </div>
+
+    </div>
+
+    <p class="message">
+
+        Semoga usia yang baru dipenuhi
+        kesehatan, kebahagiaan, tawa,
+        dan banyak hal baik. ✨
+
+    </p>
+
+
+    <!-- KUE -->
+
+    <div class="cakeArea">
+
+        <div class="glow"></div>
+
+        <div class="cake">
+
+            <div class="layer1"></div>
+            <div class="layer2"></div>
+            <div class="layer3"></div>
+
+            <div class="drip a"></div>
+            <div class="drip b"></div>
+            <div class="drip c"></div>
+
+            <div class="berry one"></div>
+            <div class="berry two"></div>
+
+            <div class="candles">
+
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOMBOL TIUP -->
+
+    <button
+        id="blowButton"
+        class="blowButton">
+
+        🕯️ TIUP LILIN virtual dulu 😭 
+
+    </button>
+
+    <div class="hint">
+
+        Tiup lilinnya untuk membuka
+        kejutan berikutnya 👀
+
+    </div>
+
+</section>
+
+
+<!-- ======================================================
+     PAGE 3 — FOTO KEDUA
+====================================================== -->
+
+<section
+    id="page3"
+    class="page page3">
+
+    <div class="decor d1">🍓</div>
+    <div class="decor d2">💗</div>
+    <div class="decor d3">✨</div>
+
+    <div class="eyebrow">
+        SURPRISE! 🍓
+    </div>
+
+    <div class="surprise">
+        Masih ada satu lagi!
+    </div>
+
+    <div class="photo">
+
+        <img
+            src="foto2.jpg"
+            alt="Foto kedua Indah">
+
+        <div class="caption">
+            Tetap senyum ya, Indah 💗
+        </div>
+
+    </div>
+
+    <p class="message2">
+
+        Lilinnya sudah padam...
+        tapi kejutannya belum selesai. 😆
+
+        <br><br>
+
+        Semoga tahun ini membawa
+        lebih banyak cerita seru,
+        kebahagiaan, kesehatan,
+        dan momen-momen indah.
+
+        <br><br>
+
+        Dan tentunya...
+        semoga stroberi selalu tersedia. 🍓😂
+
+    </p>
+
+    <button
+        id="finalButton"
+        class="mainButton">
+
+        💗 udah baca?klik ini indah😛
+
+    </button>
+
+</section>
+
+
+<!-- ======================================================
+     PAGE 4 — PESAN TERAKHIR
+====================================================== -->
+
+<section
+    id="page4"
+    class="page page4">
+
+    <div class="panda">
+
+        <div class="ear left"></div>
+        <div class="ear right"></div>
+
+        <div class="head">
+
+            <div class="mask left"></div>
+            <div class="mask right"></div>
+
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+
+            <div class="nose"></div>
+            <div class="mouth"></div>
+
+            <div class="cheek left"></div>
+            <div class="cheek right"></div>
+
+        </div>
+
+        <div class="body"></div>
+
+    </div>
+
+    <div class="eyebrow">
+        FOR INDAH 💗
+    </div>
+
+    <div class="finalName">
+        Indah
+    </div>
+
+    <div class="finalDecor">
+        🍓 💗 🐼 💗 🍓
+    </div>
+
+    <p class="finalText">
+
+    Selamat ulang tahun, Indah! 🎂💗
+
+    <br><br>
+
+    Semoga di usia yang baru ini
+    kamu semakin bahagia, semakin kuat,
+    dan semakin dekat dengan hal-hal
+    yang kamu impikan.
+
+    <br><br>
+
+    Semoga selalu sehat,
+    dimudahkan dalam segala urusan,
+    dikelilingi orang-orang baik,
+    dan punya banyak alasan untuk tersenyum.
+
+    <br><br>
+
+    Nikmati hari spesialmu,
+    karena hari ini adalah tentang kamu. 🌸✨
+
+    <br><br>
+
+    susah bgt dapet nomor wa + alamat 🥴 jadi hadiahnya kapan kapan aja 😭😭😭😭😭
+
+    <b>
+        Happy Birthday, Indah! 🐼🍓💗
+    </b>
+
+</p>
+
+    <button
+        id="replayButton"
+        class="replay">
+
+        🔄 udah abiss 😭 klik ini kalo mau liat lagi
+
+    </button>
+
+</section>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   REFERENSI HALAMAN
+========================================================= */
+
+const pages = [
+    document.getElementById("page1"),
+    document.getElementById("page2"),
+    document.getElementById("page3"),
+    document.getElementById("page4")
+];
+
+let currentPage = 0;
+
+
+/* =========================================================
+   NAVIGASI HALAMAN
+========================================================= */
+
+function goToPage(index){
+
+    if(index === currentPage){
+        return;
+    }
+
+    const oldPage =
+        pages[currentPage];
+
+    const newPage =
+        pages[index];
+
+
+    /* halaman lama keluar */
+
+    oldPage.classList.remove("active");
+
+    oldPage.classList.add("exit");
+
+
+    /*
+       Sedikit jeda agar transisi
+       terasa seperti halaman membuka,
+       bukan bergeser.
+    */
+
+    setTimeout(() => {
+
+        newPage.classList.add("active");
+
+        newPage.classList.add(
+            "transitionLight"
+        );
+
+        setTimeout(() => {
+
+            newPage.classList.remove(
+                "transitionLight"
+            );
+
+        },1400);
+
+    },180);
+
+
+    setTimeout(() => {
+
+        oldPage.classList.remove("exit");
+
+    },1600);
+
+
+    currentPage = index;
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+const music =
+    document.getElementById("music");
+
+const musicButton =
+    document.getElementById(
+        "musicButton"
+    );
+
+function playMusic(){
+
+    music.volume = .55;
+
+    music.play()
+        .then(() => {
+
+            musicButton.textContent =
+                "🎵";
+
+            musicButton.classList.add(
+                "playing"
+            );
+
+        })
+        .catch(() => {});
+
+}
+
+
+musicButton.addEventListener(
+    "click",
+    () => {
+
+        if(music.paused){
+
+            music.play()
+                .then(() => {
+
+                    musicButton.textContent =
+                        "🎵";
+
+                    musicButton.classList.add(
+                        "playing"
+                    );
+
+                })
+                .catch(() => {});
+
+        }else{
+
+            music.pause();
+
+            musicButton.textContent =
+                "🔇";
+
+            musicButton.classList.remove(
+                "playing"
+            );
+        }
+
+    }
+);
+
+
+/* =========================================================
+   OPEN BUTTON
+========================================================= */
+
+document
+.getElementById("openButton")
+.addEventListener(
+    "click",
+    () => {
+
+        playMusic();
+
+        goToPage(1);
+
+        setTimeout(() => {
+
+            confetti(80);
+
+        },500);
+
+    }
+);
+
+
+/* =========================================================
+   TIUP LILIN
+========================================================= */
+
+let blown = false;
+
+document
+.getElementById("blowButton")
+.addEventListener(
+    "click",
+    () => {
+
+        if(blown){
+            return;
+        }
+
+        blown = true;
+
+
+        /* api padam */
+
+        const flames =
+            document.querySelectorAll(
+                ".flame"
+            );
+
+        flames.forEach(
+            flame => {
+
+                flame.classList.add(
+                    "off"
+                );
+
+            }
+        );
+
+
+        /* asap */
+
+        document
+        .querySelectorAll(
+            ".candle"
+        )
+        .forEach(
+            candle => {
+
+                const smoke =
+                    document.createElement(
+                        "div"
+                    );
+
+                smoke.className =
+                    "smoke";
+
+                smoke.style.left =
+                    "4px";
+
+                smoke.style.top =
+                    "-10px";
+
+                candle.appendChild(
+                    smoke
+                );
+
+            }
+        );
+
+
+        const button =
+            document.getElementById(
+                "blowButton"
+            );
+
+        button.textContent =
+            "✨ yeaaayy sudah padam!";
+
+
+        /* confetti */
+
+        confetti(180);
+
+
+        /* fireworks */
+
+        fireworks();
+
+
+        /*
+           Tunggu api padam,
+           asap dan fireworks,
+           lalu munculkan cahaya.
+        */
+
+        setTimeout(
+            () => {
+
+                /* ======================================
+                   FLASH PINK
+                ====================================== */
+
+                const flash =
+                    document.createElement(
+                        "div"
+                    );
+
+                flash.className =
+                    "birthdayFlash";
+
+                document.body.appendChild(
+                    flash
+                );
+
+
+                /* cahaya mulai muncul */
+
+                requestAnimationFrame(
+                    () => {
+
+                        flash.style.opacity =
+                            "1";
+
+                        flash.style.transform =
+                            "scale(1.5)";
+
+                    }
+                );
+
+
+                /* ======================================
+                   PINDAH KE FOTO KEDUA
+                ====================================== */
+
+                setTimeout(
+                    () => {
+
+                        goToPage(2);
+
+                    },
+                    550
+                );
+
+
+                /* ======================================
+                   CAHAYA MEMUDAR
+                ====================================== */
+
+                setTimeout(
+                    () => {
+
+                        flash.style.opacity =
+                            "0";
+
+                        flash.style.transform =
+                            "scale(2.5)";
+
+                    },
+                    850
+                );
+
+
+                setTimeout(
+                    () => {
+
+                        flash.remove();
+
+                    },
+                    1500
+                );
+
+            },
+            1800
+        );
+
+    }
+);
+
+
+/* =========================================================
+   PAGE 3 → PAGE 4
+========================================================= */
+
+document
+.getElementById("finalButton")
+.addEventListener(
+    "click",
+    () => {
+
+        confetti(150);
+
+        fireworks();
+
+        goToPage(3);
+
+    }
+);
+
+
+/* =========================================================
+   REPLAY
+========================================================= */
+
+document
+.getElementById("replayButton")
+.addEventListener(
+    "click",
+    () => {
+
+        location.reload();
+
+    }
+);
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+function confetti(amount){
+
+    const colors = [
+
+        "#ff5c96",
+        "#ff9fc1",
+        "#ffd166",
+        "#ffffff",
+        "#dd435d",
+        "#72a75d",
+        "#bd83e8"
+
+    ];
+
+
+    for(
+        let i = 0;
+        i < amount;
+        i++
+    ){
+
+        const c =
+            document.createElement(
+                "div"
+            );
+
+        c.className =
+            "confetti";
+
+
+        c.style.left =
+            Math.random() * 100 + "vw";
+
+
+        c.style.top =
+            (-10 - Math.random()*20)
+            + "vh";
+
+
+        c.style.background =
+            colors[
+                Math.floor(
+                    Math.random()
+                    * colors.length
+                )
+            ];
+
+
+        c.style.transform =
+            `rotate(${Math.random()*360}deg)`;
+
+
+        c.style.animationDuration =
+            (2.2 + Math.random()*2.3)
+            + "s";
+
+
+        c.style.animationDelay =
+            Math.random() * .4
+            + "s";
+
+
+        document.body.appendChild(c);
+
+
+        setTimeout(
+            () => {
+
+                c.remove();
+
+            },
+            6000
+        );
+
+    }
+}
+
+
+/* =========================================================
+   FIREWORKS
+========================================================= */
+
+function fireworks(){
+
+    const colors = [
+
+        "#ff5c96",
+        "#ffd166",
+        "#ffffff",
+        "#ff9fc1",
+        "#78ad62",
+        "#bd83e8"
+
+    ];
+
+
+    for(
+        let burst = 0;
+        burst < 7;
+        burst++
+    ){
+
+        setTimeout(
+            () => {
+
+                const x =
+                    15 + Math.random()*70;
+
+                const y =
+                    15 + Math.random()*40;
+
+
+                for(
+                    let i = 0;
+                    i < 35;
+                    i++
+                ){
+
+                    const p =
+                        document.createElement(
+                            "div"
+                        );
+
+                    p.className =
+                        "firework";
+
+
+                    p.style.left =
+                        x + "vw";
+
+                    p.style.top =
+                        y + "vh";
+
+
+                    p.style.background =
+                        colors[
+                            Math.floor(
+                                Math.random()
+                                * colors.length
+                            )
+                        ];
+
+
+                    document.body.appendChild(
+                        p
+                    );
+
+
+                    const angle =
+                        Math.random()
+                        * Math.PI * 2;
+
+
+                    const distance =
+                        50 +
+                        Math.random()*120;
+
+
+                    const dx =
+                        Math.cos(angle)
+                        * distance;
+
+
+                    const dy =
+                        Math.sin(angle)
+                        * distance;
+
+
+                    const animation =
+                        p.animate(
+                            [
+                                {
+                                    transform:
+                                        "translate(-50%,-50%) scale(1)",
+
+                                    opacity:1
+                                },
+
+                                {
+                                    transform:
+                                        `translate(${dx}px,${dy}px) scale(.1)`,
+
+                                    opacity:0
+                                }
+                            ],
+                            {
+                                duration:
+                                    700 +
+                                    Math.random()*600,
+
+                                easing:
+                                    "cubic-bezier(.2,.8,.3,1)"
+                            }
+                        );
+
+
+                    animation.onfinish =
+                        () => {
+
+                            p.remove();
+
+                        };
+
+                }
+
+            },
+            burst * 220
+        );
+
+    }
+}
+
+
+/* =========================================================
+   EFEK BINTANG KECIL
+========================================================= */
+
+function sparkleBurst(){
+
+    const symbols = [
+        "✨",
+        "💗",
+        "🍓"
+    ];
+
+    for(
+        let i = 0;
+        i < 18;
+        i++
+    ){
+
+        const s =
+            document.createElement(
+                "div"
+            );
+
+        s.textContent =
+            symbols[
+                Math.floor(
+                    Math.random()
+                    * symbols.length
+                )
+            ];
+
+        s.style.position =
+            "fixed";
+
+        s.style.zIndex =
+            "9997";
+
+        s.style.left =
+            "50vw";
+
+        s.style.top =
+            "50vh";
+
+        s.style.pointerEvents =
+            "none";
+
+        s.style.fontSize =
+            (14 + Math.random()*16)
+            + "px";
+
+        document.body.appendChild(
+            s
+        );
+
+
+        const angle =
+            Math.random()
+            * Math.PI * 2;
+
+        const distance =
+            70 +
+            Math.random()*150;
+
+
+        const x =
+            Math.cos(angle)
+            * distance;
+
+        const y =
+            Math.sin(angle)
+            * distance;
+
+
+        const animation =
+            s.animate(
+                [
+                    {
+                        opacity:0,
+
+                        transform:
+                            "translate(-50%,-50%) scale(.3)"
+                    },
+
+                    {
+                        opacity:1,
+
+                        transform:
+                            "translate(-50%,-50%) scale(1)"
+                    },
+
+                    {
+                        opacity:0,
+
+                        transform:
+                            `translate(
+                                calc(-50% + ${x}px),
+                                calc(-50% + ${y}px)
+                            )
+                            scale(.4)`
+                    }
+                ],
+                {
+                    duration:
+                        1300,
+
+                    easing:
+                        "cubic-bezier(.16,1,.3,1)"
+                }
+            );
+
+
+        animation.onfinish =
+            () => {
+
+                s.remove();
+
+            };
+
+    }
+}
+
+
+/* =========================================================
+   TAMBAHAN EFEK SAAT HALAMAN FOTO KEDUA MUNCUL
+========================================================= */
+
+const originalGoToPage =
+    goToPage;
+
+
+/*
+   Tidak perlu override navigasi.
+   Efek foto sudah dikendalikan
+   oleh .page3.active .photo
+*/
+
+
+</script>
+
+</body>
+</html>
