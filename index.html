@@ -2465,9 +2465,28 @@ document
     "click",
     () => {
 
+        /*
+        STOP MUSIK BACKGROUND
+        SEBELUM MASUK VIDEO
+        */
+
+        music.pause();
+
+        musicButton.textContent = "🔇";
+
+        musicButton.classList.remove(
+            "playing"
+        );
+
+
         confetti(100);
 
         sparkleBurst();
+
+
+        /*
+        MASUK KE HALAMAN VIDEO
+        */
 
         goToPage(3);
 
@@ -2490,11 +2509,45 @@ document
     "click",
     () => {
 
+        /*
+        HENTIKAN VIDEO
+        */
+
         birthdayVideo.pause();
+
+
+        /*
+        PUTAR LAGI MUSIK BACKGROUND
+        DARI AWAL
+        */
+
+        music.currentTime = 0;
+
+        music.play()
+        .then(() => {
+
+            musicButton.textContent = "🎵";
+
+            musicButton.classList.add(
+                "playing"
+            );
+
+        })
+        .catch(() => {});
+
+
+        /*
+        EFEK KEJUTAN
+        */
 
         confetti(150);
 
         fireworks();
+
+
+        /*
+        MASUK KE HALAMAN TERAKHIR
+        */
 
         goToPage(4);
 
