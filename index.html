@@ -2650,13 +2650,53 @@ document
 
 
 /* =========================================================
-   VIDEO KE PESAN TERAKHIR
+   VIDEO 1 KE VIDEO 2
 ========================================================= */
 
 const birthdayVideo =
-    document.getElementById(
-        "birthdayVideo"
-    );
+    document.getElementById("birthdayVideo");
+
+const birthdayVideo2 =
+    document.getElementById("birthdayVideo2");
+
+
+document
+.getElementById("video2Button")
+.addEventListener(
+    "click",
+    () => {
+
+        /*
+        HENTIKAN VIDEO PERTAMA
+        */
+
+        birthdayVideo.pause();
+
+        birthdayVideo.currentTime = 0;
+
+
+        /*
+        EFEK TRANSISI
+        */
+
+        confetti(100);
+
+        sparkleBurst();
+
+
+        /*
+        PINDAH KE VIDEO KEDUA
+        */
+
+        goToPage(4);
+
+    }
+);
+
+
+/* =========================================================
+   VIDEO 2 KE PESAN TERAKHIR
+========================================================= */
 
 document
 .getElementById("finalButton")
@@ -2664,6 +2704,52 @@ document
     "click",
     () => {
 
+        /*
+        HENTIKAN VIDEO KEDUA
+        */
+
+        birthdayVideo2.pause();
+
+        birthdayVideo2.currentTime = 0;
+
+
+        /*
+        PUTAR LAGI MUSIK BACKGROUND
+        DARI AWAL
+        */
+
+        music.currentTime = 0;
+
+        music.play()
+        .then(() => {
+
+            musicButton.textContent = "🎵";
+
+            musicButton.classList.add(
+                "playing"
+            );
+
+        })
+        .catch(() => {});
+
+
+        /*
+        EFEK KEJUTAN
+        */
+
+        confetti(150);
+
+        fireworks();
+
+
+        /*
+        MASUK KE HALAMAN TERAKHIR
+        */
+
+        goToPage(5);
+
+    }
+);
         /*
         HENTIKAN VIDEO
         */
